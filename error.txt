@@ -1,0 +1,56 @@
+(mssql): BEGIN TRAN   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): SELECT max(no_kuitansi_bendahara) as kode FROM bd_tc_setoran   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): select c.name, t.name, c.length, (case when c.xusertype=61 then 0 else c.xprec end), (case when c.xusertype=61 then 0 else c.xscale end) from syscolumns c join systypes t on t.xusertype=c.xusertype join sysobjects o on o.id=c.id where o.name='BD_TC_SETORAN'   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): SELECT * FROM bd_tc_setoran WHERE no_kuitansi_bendahara IS NULL   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): INSERT INTO bd_tc_setoran ( NO_KUITANSI_BENDAHARA, NO_INDUK_KASIR, KODE_LOKET, KODE_SHIFT, TGL_TRANSAKSI, TGL_DISETOR, NO_INDUK ) VALUES ( 9, 38, 2, 1, '2007-11-13 12:00:00AM', '2007-11-13 01:31:07PM', 47 )   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): SELECT * FROM tc_trans_kasir WHERE no_induk = 38 AND kode_shift = 1 AND kode_loket = 2 AND (tgl_jam BETWEEN '2007-11-13 00:00:00' AND '2007-11-13 23:59:59')   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): UPDATE tc_trans_kasir SET NO_KUITANSI_BENDAHARA=9 WHERE no_induk = 38 AND kode_shift = 1 AND kode_loket = 2 AND (tgl_jam BETWEEN '2007-11-13 00:00:00' AND '2007-11-13 23:59:59')   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): SELECT SUM(tunai) AS nilai FROM tc_trans_kasir WHERE no_kuitansi_bendahara = 9   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): select c.name, t.name, c.length, (case when c.xusertype=61 then 0 else c.xprec end), (case when c.xusertype=61 then 0 else c.xscale end) from syscolumns c join systypes t on t.xusertype=c.xusertype join sysobjects o on o.id=c.id where o.name='BD_TC_TRANS'   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): SELECT * FROM bd_tc_trans WHERE id_bd_tc_trans IS NULL   
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+(mssql): INSERT INTO bd_tc_trans ( KD_GROUP_TRANS, KD_TRANS_BENDAHARA, NO_BUKTI, URAIAN, JUMLAH, MATERAI, PENERIMA, TGL_TRANSAKSI, NO_INDUK, ONLINE ) VALUES ( 4, 1107, '9', 'Setoran loket tunai', 70000, 0, 'Staff Keuangan', '2007-11-13 01:31:07PM', '47', 1 )   
+--------------------------------------------------------------------------------
+
+Warning: mssql_query() [function.mssql-query]: message: INSERT statement conflicted with COLUMN FOREIGN KEY constraint 'FK_bd_tc_trans_mt_karyawan'. The conflict occurred in database 'rls_rsasri_sirs_new', table 'mt_karyawan_old', column 'no_induk'. (severity 16) in C:\AppServ\www\sirs\_contrib\adodb\drivers\adodb-mssql.inc.php on line 669
+
+Warning: mssql_query() [function.mssql-query]: Query failed in C:\AppServ\www\sirs\_contrib\adodb\drivers\adodb-mssql.inc.php on line 669
+547: The statement has been terminated.
+
+   ADOConnection._Execute(INSERT INTO bd_tc_trans ( KD_GROUP_TRANS, KD_TRANS_BENDAHARA, NO..., false) % line  833, file: adodb.inc.php
+ADOConnection.Execute(INSERT INTO bd_tc_trans ( KD_GROUP_TRANS, KD_TRANS_BENDAHARA, NO...) % line   75, file: function.olah_tabel.php
+insert_tabel(bd_tc_trans, Array[10]) % line   67, file: detail_setoran_loket_submit.php
+
+
+--------------------------------------------------------------------------------
+(mssql): ROLLBACK TRAN   
+--------------------------------------------------------------------------------

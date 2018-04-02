@@ -1,0 +1,71 @@
+/*SQL*/
+
+A. Lakukan eksekusi di query:
+
+1.
+
+ALTER TABLE `odc_tc_registrasi`
+ADD COLUMN `flag_paket`  tinyint NULL COMMENT '1:paket,2:non paket' AFTER `no_mr`;
+
+2. 
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `dd_templet_mcu`
+-- ----------------------------
+DROP TABLE IF EXISTS `dd_templet_mcu`;
+CREATE TABLE `dd_templet_mcu` (
+  `id_dd_template_mcu` int(11) NOT NULL auto_increment,
+  `isi_template` longtext,
+  `jenis_template` tinyint(4) default NULL COMMENT '1:anamnesa,2:pemeriksaan fisik,3:kesimpulan',
+  `jenis_mcu` tinyint(4) default NULL,
+  PRIMARY KEY  (`id_dd_template_mcu`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of dd_templet_mcu
+-- ----------------------------
+INSERT INTO `dd_templet_mcu` VALUES ('1', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 500px;\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				<strong>1.</strong></td>\r\n			<td>\r\n				<strong>Keluhan utama penyakit sekarang :</strong></td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td colspan=\"2\" rowspan=\"1\">\r\n				Keluhan :</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				<strong>2.</strong></td>\r\n			<td>\r\n				<strong>Riwayat penyakit masa lampau :</strong></td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Sakit Kuning</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Kencing Manis</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				<strong>- </strong>Hipertensi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Kencing batu</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Asma</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Riwayat operasi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Penyakit karena kecelakaan</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Lain -lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				<strong>3.</strong></td>\r\n			<td>\r\n				<strong>Riwayat penyakit dalam keluarga :</strong></td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Alergi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Kencing manis</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Penyakit darah</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Penyakit jiwa</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Hipertensi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Kencing batu</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Lain- lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				<strong>4.</strong></td>\r\n			<td>\r\n				&nbsp;Catatan khusus alergi</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Makanan</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Udara</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Obat</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				- Lain -lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '1', '1');
+INSERT INTO `dd_templet_mcu` VALUES ('3', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 500px;\">\r\n	<tbody>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Mata</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Konjungtiva</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				-Sclera</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Reflek cahaya</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Penglihatan/Visus</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Kaca mata</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>THT</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Telinga</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Hidung</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Tenggorakan/tonsil</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Mulut/Gigi </strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Lidah</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Gigi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Leher</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- JVP</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Tiroid</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Kel. Getah bening</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Thorax</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Paru Kanan</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Paru kiri</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Jantung</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Besar</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Bunyi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Bising</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Lain - lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"2\">\r\n				<strong>Abdomen</strong></td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Hati/limpa</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Nyeri</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Tumor</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				- Lain - lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				&nbsp;</td>\r\n			<td>\r\n				&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				Extremitas</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				Neurologis</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				Kulit</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				Kel. Getah bening</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				Lain - lain</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '2', '1');
+INSERT INTO `dd_templet_mcu` VALUES ('4', '<table border=\"0\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 500px;\">\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n				1.</td>\r\n			<td>\r\n				Pemeriksaan Fisik</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				2.</td>\r\n			<td>\r\n				Status Gizi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				3.</td>\r\n			<td>\r\n				Gigi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				4.</td>\r\n			<td>\r\n				Mata</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				5.</td>\r\n			<td>\r\n				Pemeriksaan radiologi</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				6.</td>\r\n			<td>\r\n				Pemeriksaan EKG</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td>\r\n				7.</td>\r\n			<td>\r\n				Laboratorium</td>\r\n			<td>\r\n				:</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan=\"3\">\r\n				Hasil MCU :</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	&nbsp;</p>\r\n', '3', '1');
+
+3. 
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `tc_trans_pelayanan_paket_odc`
+-- ----------------------------
+DROP TABLE IF EXISTS `tc_trans_pelayanan_paket_odc`;
+CREATE TABLE `tc_trans_pelayanan_paket_odc` (
+  `kode_trans_pelayanan_paket_odc` int(11) NOT NULL auto_increment,
+  `no_kunjungan` int(11) default NULL,
+  `no_registrasi` int(11) default NULL,
+  `kode_tarif_odc` int(11) default NULL,
+  `no_mr` varchar(50) default NULL,
+  `tgl_transaksi` datetime default NULL,
+  `id_odc_tc_registrasi` int(11) default NULL,
+  `nama_tindakan_paket` varchar(100) default NULL,
+  `nama_tindakan` varchar(100) default NULL,
+  `kode_bagian` varchar(50) default NULL,
+  `kode_bagian_asal` varchar(50) default NULL,
+  `bill_rs` decimal(19,4) default NULL,
+  `bill_dr` decimal(19,4) default NULL,
+  `bill_total` decimal(19,4) default NULL,
+  `jumlah` int(11) default NULL,
+  `status_selesai` tinyint(4) default NULL,
+  `kode_tarif_detail` varchar(20) default NULL,
+  `kode_poli` int(11) default NULL,
+  `kode_dokter_odc` varchar(20) default NULL,
+  `bill_dr2` decimal(19,4) default NULL,
+  PRIMARY KEY  (`kode_trans_pelayanan_paket_odc`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+
+
+B. Lakukan Execute yang ada di folder db untuk tabel berikut ini
+
+- mt_master_tarif.sql
+- mt_master_tarif_detail.sql
+- mt_mcu_tarif_detail.sql

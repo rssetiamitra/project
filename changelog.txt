@@ -1,0 +1,2 @@
+Modul Bedah
+1. mt_ruangan setiap kelas diberikan kamar bedah kode bagian 030701

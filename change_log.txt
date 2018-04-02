@@ -1,0 +1,5 @@
+Change log
+------------
+perubahan DB Mysql
+  1.perbaikan Modul registrasi menu pencarian dokter submenu Pencarian Dokter pada saat klik nama dokter error
+	-di view rg_master_pasien_v klik design pada tabel mt_master_pasien field url_foto_pasien di klik dan di save
